@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 340" width="1000" height="340">
+  <defs>
+    <filter id="exShadow" x="-4%" y="-4%" width="108%" height="108%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="3" result="b"/>
+      <feOffset dx="0" dy="2" in="b" result="o"/>
+      <feFlood flood-color="#000" flood-opacity="0.45" result="f"/>
+      <feComposite in="f" in2="o" operator="in" result="sh"/>
+      <feMerge>
+        <feMergeNode in="sh"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="exWin">
+      <rect x="6" y="6" width="988" height="328" rx="8" ry="8"/>
+    </clipPath>
+    <linearGradient id="exTitle" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#323232"/>
+      <stop offset="100%" stop-color="#2a2a2a"/>
+    </linearGradient>
+  </defs>
+
+  <g filter="url(#exShadow)">
+    <rect x="6" y="6" width="988" height="328" rx="8" ry="8" fill="#1e1e1e" stroke="#3d3d3d" stroke-width="1"/>
+    <g clip-path="url(#exWin)">
+      <rect x="6" y="6" width="988" height="40" fill="url(#exTitle)"/>
+      <line x1="6" y1="46" x2="994" y2="46" stroke="#1a1a1a" stroke-width="1"/>
+      <path d="M 18 14 L 18 26 Q 18 30 24 33 Q 30 30 30 26 L 30 14 Q 24 11 18 14 Z" fill="none" stroke="#b0b0b0" stroke-width="1.1" stroke-linejoin="round"/>
+      <path d="M 21 17 L 21 25 Q 21 28 24 29.5 Q 27 28 27 25 L 27 17" fill="none" stroke="#888" stroke-width="0.6"/>
+      <path d="M 40 10 L 40 46 L 318 46 L 318 14 Q 318 10 314 10 Z" fill="#0c0c0c" stroke="#1f1f1f" stroke-width="1"/>
+      <rect x="50" y="18" width="16" height="14" rx="1" fill="none" stroke="#d8d8d8" stroke-width="0.9"/>
+      <text x="52.5" y="28.5" font-family="Cascadia Mono, Consolas, monospace" font-size="8" fill="#e8e8e8">&gt;_</text>
+      <text x="72" y="28" font-family="Segoe UI, system-ui, sans-serif" font-size="11.5" fill="#e0e0e0">user@wsl: ~</text>
+      <g stroke="#c0c0c0" stroke-width="1" stroke-linecap="round">
+        <path d="M 292 20 L 300 28 M 300 20 L 292 28"/>
+      </g>
+      <g stroke="#d2d2d2" stroke-width="1.2" stroke-linecap="round">
+        <line x1="334" y1="24" x2="334" y2="32"/>
+        <line x1="330" y1="28" x2="338" y2="28"/>
+      </g>
+      <path d="M 356 26 L 360 30 L 364 26" fill="none" stroke="#d2d2d2" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+      <g stroke="#e4e4e4" stroke-width="1" stroke-linecap="round" fill="none">
+        <line x1="898" y1="26" x2="922" y2="26"/>
+        <rect x="944" y="19" width="11" height="9" rx="0.5"/>
+        <path d="M 976 19 L 988 31 M 988 19 L 976 31"/>
+      </g>
+      <rect x="6" y="46" width="988" height="288" fill="#000000"/>
+      <rect x="982" y="52" width="5" height="220" rx="2" fill="#2a2a2a"/>
+      <rect x="983" y="70" width="3" height="40" rx="1" fill="#5a5a5a"/>
+    </g>
+  </g>
+
+  <g font-family="Cascadia Mono, Consolas, 'Courier New', monospace" font-size="12" clip-path="url(#exWin)">
+    <text x="14" y="68">
+      <tspan fill="#16c60c">user@wsl</tspan><tspan fill="#cccccc">:</tspan><tspan fill="#3b8eea">~</tspan><tspan fill="#cccccc">$ </tspan><tspan fill="#cccccc">cortex exec &quot;hello&quot;</tspan>
+    </text>
+    <text x="14" y="96" fill="#858585"># backend emits only EventMsg::AgentMessage (full text), no AgentMessageDelta</text>
+    <text x="14" y="122" fill="#cccccc">(exit 0)</text>
+    <text x="14" y="148" fill="#f44747"># assistant reply never written: text path prints only deltas</text>
+    <text x="14" y="174" fill="#858585"># runner.rs process_events: final_message set but stdout unchanged</text>
+    <text x="14" y="200" fill="#4ec9b0"># fix: in text mode, if no delta output yet, print final_message (or always flush final)</text>
+    <text x="14" y="228">
+      <tspan fill="#16c60c">user@wsl</tspan><tspan fill="#cccccc">:</tspan><tspan fill="#3b8eea">~</tspan><tspan fill="#cccccc">$ </tspan><tspan fill="#cccccc">cortex exec &quot;hello&quot;   </tspan><tspan fill="#858585"># expected</tspan>
+    </text>
+    <text x="14" y="252" fill="#cccccc">Hello! How can I help you today?</text>
+    <text x="14" y="278">
+      <tspan fill="#16c60c">user@wsl</tspan><tspan fill="#cccccc">:</tspan><tspan fill="#3b8eea">~</tspan><tspan fill="#cccccc">$ </tspan><tspan fill="#cccccc">_</tspan>
+    </text>
+  </g>
+</svg>
